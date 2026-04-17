@@ -36,6 +36,8 @@ See also:
 - `ACCEPTABLE_USE.md`
 - `SECURITY.md`
 - `CHANGELOG.md`
+- `CONTRIBUTING.md`
+- `CODE_OF_CONDUCT.md`
 
 ## What it does
 
@@ -130,6 +132,11 @@ Run the public safety check before pushing changes:
 - Use feature requests for product-level suggestions
 - Do not post live credentials, cookies, personal booking data, or private webhook URLs
 - Support is best-effort and focused on the public open-source edition
+
+## Community docs
+
+- Contribution guide: `CONTRIBUTING.md`
+- Community expectations: `CODE_OF_CONDUCT.md`
 
 ## License
 
