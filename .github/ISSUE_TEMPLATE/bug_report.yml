@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible problem in the open-source Agoda edition
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug.
+        Please do not include credentials, cookies, personal booking details, or private webhook URLs.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+      placeholder: A short bug summary
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide a minimal sequence that reproduces the issue
+      placeholder: |
+        1. Start the app
+        2. Open ...
+        3. Click ...
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: e.g. 0.1.0
+  - type: input
+    id: os
+    attributes:
+      label: macOS version
+      placeholder: e.g. macOS 15.4
+  - type: textarea
+    id: logs
+    attributes:
+      label: Safe logs or screenshots
+      description: Remove private data before posting

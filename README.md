@@ -1,6 +1,41 @@
 # Agoda Hotel Price Alert
 
-A local web tool for monitoring Agoda hotel room prices.
+![Platform](https://img.shields.io/badge/platform-macOS-black)
+![Python](https://img.shields.io/badge/python-3.11%2B-blue)
+![Local Only](https://img.shields.io/badge/server-localhost--only-success)
+![Scope](https://img.shields.io/badge/scope-Agoda%20only-orange)
+![License](https://img.shields.io/github/license/MarxMa95/agoda-hotel-price-alert)
+![Release](https://img.shields.io/github/v/release/MarxMa95/agoda-hotel-price-alert)
+
+A local-first Agoda hotel price watcher with dedicated sign-in, room-level matching, scheduled checks, and webhook alerts.
+
+## Highlights
+
+- Dedicated Agoda sign-in flow with local session persistence
+- Room candidate preview and room-level matching
+- Manual checks plus scheduled polling with local history
+- Feishu and WeCom webhook notifications
+- Local-only server binding for personal desktop usage
+- Built-in public safety limits for the open-source edition
+
+## Safety model
+
+This repository is intentionally designed for low-volume personal use on a local machine.
+
+Built-in safeguards:
+- localhost-only server binding
+- Agoda-only target URL restriction
+- minimum polling interval of 5 minutes
+- active watcher limit of 20
+- runtime profiles, screenshots, logs, and database excluded from Git
+
+Please respect Agoda's terms, rate limits, robots controls, and other access restrictions.
+Do not use this project as a hosted scraping service, bulk-monitoring platform, or resale system.
+
+See also:
+- `ACCEPTABLE_USE.md`
+- `SECURITY.md`
+- `CHANGELOG.md`
 
 ## What it does
 
@@ -30,7 +65,7 @@ A local web tool for monitoring Agoda hotel room prices.
 ## Install
 
 ```bash
-python3 -m pip install playwright
+python3 -m pip install -r requirements.txt
 python3 -m playwright install chromium
 ```
 
@@ -52,12 +87,6 @@ Open: `http://127.0.0.1:8767`
 6. Preview room candidates
 7. Save the watcher and run a manual check
 
-## Notes
-
-- This project stores login state locally under `session_profiles/`
-- Runtime data such as database, logs, screenshots, and browser profiles are excluded by `.gitignore`
-- The launcher scripts are designed for local macOS usage and derive paths from the script location
-
 ## Local command wrappers
 
 For local macOS usage, the repo also includes these `.command` launchers:
@@ -71,24 +100,6 @@ For local macOS usage, the repo also includes these `.command` launchers:
 - `run_local.command`
 - `run_doctor.command`
 - `refresh_desktop_shortcuts.command`
-
-## Responsible Use
-
-This open-source edition is designed for low-volume personal use on a local machine.
-
-Built-in safeguards:
-- localhost-only server binding
-- Agoda-only URL restriction
-- minimum polling interval of 5 minutes
-- active watcher limit of 20
-- runtime session and login data excluded from Git
-
-Please use it responsibly and respect Agoda's terms, rate limits, and access controls.
-Do not use this repository as a public scraping platform or a high-volume monitoring service.
-
-See also:
-- `ACCEPTABLE_USE.md`
-- `SECURITY.md`
 
 ## Launchd helpers
 
@@ -107,14 +118,19 @@ Make sure you do **not** commit:
 - `logs/`
 - `debug_screens/`
 
-## License
-
-This project is released under the MIT License. See `LICENSE`.
-
-## Pre-publish check
-
-Run before pushing public changes:
+Run the public safety check before pushing changes:
 
 ```bash
 ./scripts/prepublish_check.sh
 ```
+
+## Issue policy
+
+- Use bug reports for reproducible defects in the open-source codebase
+- Use feature requests for product-level suggestions
+- Do not post live credentials, cookies, personal booking data, or private webhook URLs
+- Support is best-effort and focused on the public open-source edition
+
+## License
+
+This project is released under the MIT License. See `LICENSE`.

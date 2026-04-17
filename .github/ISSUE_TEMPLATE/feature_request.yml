@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest an improvement for the open-source Agoda edition
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea.
+        Please keep requests aligned with low-volume, personal-use, local-first operation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What user problem or workflow gap are you trying to fix?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe your preferred solution
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and constraints
+      description: Note any safety, compliance, or maintenance concerns
